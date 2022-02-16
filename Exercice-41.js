@@ -5,10 +5,13 @@ window.onload=function(){
     function lifo_push(){
         let elem = document.createElement("li")
         let text = document.createTextNode(document.getElementById("newItem").value)
-        elem.appendChild(text)
-        document.getElementById("lifo").prepend(elem)
-        document.getElementById("newItem").value=''
-
+        if(document.getElementById("newItem").value==""){
+            throw new Error("can't push non existant text")
+        }else{
+            elem.appendChild(text)
+            document.getElementById("lifo").prepend(elem)
+            document.getElementById("newItem").value=''
+        }
     }
 
     function lifo_pop(){

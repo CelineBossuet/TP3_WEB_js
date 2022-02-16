@@ -1,0 +1,16 @@
+{
+  "name": "tp_js2_bossuetc_dorchenc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Exercice-41.js",
+  "scripts": {
+    "test": "cypress run --headed",
+    "open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.ensimag.fr:webmobile/isi2a/tp3js2/g2/TP_JS2_bossuetc_dorchenc.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
