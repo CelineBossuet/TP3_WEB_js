@@ -12,5 +12,9 @@
     "url": "git@gitlab.ensimag.fr:webmobile/isi2a/tp3js2/g2/TP_JS2_bossuetc_dorchenc.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^9.5.0",
+    "serve": "^13.0.2"
+  }
 }
