@@ -5,13 +5,12 @@ window.onload=function(){
         while(contents.firstChild!=null){
             contents.removeChild(contents.firstChild)
         }
-        affiche(list)
+        affiche(contents, list)
 
     }
 
-    function affiche(list){
+    function affiche(elem, list){
         console.log("Je rentre")
-        var elem  = document.getElementById("contents")
         var dl = document.createElement("dl")
 
         // title
@@ -24,7 +23,7 @@ window.onload=function(){
         // items
         var items = list["items"]
         var dd = document.createElement("dd")
-        
+        var ul = document.createElement("ul")
         for (i = 0; i < items.length; i++){
             var li = document.createElement("li")
             if (typeof items[i] == "string" ){
@@ -34,12 +33,13 @@ window.onload=function(){
             }
             else{
                 console.log(items[i])
-                affiche(items[i])
+                affiche(li, items[i])
             }
-            dd.append(li)
+            ul.append(li)
         }
+        dd.append(ul)
         dl.append(dd)
-        elem.appendChild(dl)
+        elem.append(dl)
         //console.log(elem)
     }
 
