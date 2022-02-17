@@ -7,29 +7,34 @@ window.onload=function(){
 
     function affiche(list){
         var elem  = document.getElementById("contents")
+        var dl = document.createElement("dl")
 
         // title
-        var title = document.createElement("h1")
+        var dt = document.createElement("dt")
         var text = document.createTextNode(list["title"])
-        title.appendChild(text)
-        elem.appendChild(title)   
+        dt.appendChild(text)
+        dl.append(dt)
         
         // items
         var items = list["items"]
-        console.log(items.length)
+        var dd = document.createElement("dd")
+        
         for (i = 0; i < items.length; i++){
-            console.log(typeof items[i])
-
+            var li = document.createElement("li")
             if (typeof items[i] == "string"){
                 console.log("int")
-                var item = document.createTextNode(items[i])
-                elem.appendChild(item)
+                var item = document.createTextNode(items[i]+" ")
+                li.appendChild(item)
             }
             else{
                 console.log("autre")
                 affiche(items[i])
             }
+            dd.append(li)
         }
+        dl.append(dd)
+        elem.appendChild(dl)
+        console.log(elem)
     }
 
 
