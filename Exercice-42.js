@@ -10,13 +10,11 @@ window.onload=function(){
     }
 
     function affiche(elem, list){
-        console.log("Je rentre")
         var dl = document.createElement("dl")
 
         // title
         var dt = document.createElement("dt")
         var text = document.createTextNode(list["title"])
-        console.log("Mon titre : "+list["title"])
         dt.appendChild(text)
         dl.append(dt)
         
@@ -24,23 +22,22 @@ window.onload=function(){
         var items = list["items"]
         var dd = document.createElement("dd")
         var ul = document.createElement("ul")
-        for (i = 0; i < items.length; i++){
+        for (var i = 0; i < items.length; i++){
             var li = document.createElement("li")
             if (typeof items[i] == "string" ){
-                console.log("j'ajoute "+items[i])
                 var item = document.createTextNode(items[i])
                 li.appendChild(item)
+                ul.append(li)
             }
             else{
-                console.log(items[i])
+                ul.append(li)
                 affiche(li, items[i])
             }
-            ul.append(li)
         }
         dd.append(ul)
         dl.append(dd)
-        elem.append(dl)
-        //console.log(elem)
+        elem.appendChild(dl)
+        return elem
     }
 
 
