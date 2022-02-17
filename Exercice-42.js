@@ -18,6 +18,7 @@ window.onload=function(){
         // items
         var items = list["items"]
         var dd = document.createElement("dd")
+        var ul = document.createElement("ul")
         
         for (i = 0; i < items.length; i++){
             var li = document.createElement("li")
@@ -30,8 +31,9 @@ window.onload=function(){
                 console.log("autre")
                 affiche(items[i])
             }
-            dd.append(li)
+            ul.append(li)
         }
+        dd.append(ul)
         dl.append(dd)
         elem.appendChild(dl)
         console.log(elem)
